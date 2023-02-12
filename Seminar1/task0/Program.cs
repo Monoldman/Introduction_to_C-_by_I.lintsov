@@ -44,10 +44,18 @@
 // int numberB = 5;
 // Console.WriteLine(numberA / numberB);
 
-// Делените двух вещественных чисел:
-double numberA = 12;
-double numberB = 5;
-Console.WriteLine(numberA / numberB);
+// // Делените двух вещественных чисел:
+// double numberA = 12;
+// double numberB = 5;
+// Console.WriteLine(numberA / numberB);
+
+// Использование генератора случайных чисел при сложении 
+int numberA = new Random() .Next(1, 10); //1234...9
+Console.WriteLine(numberA);
+int numberB = new Random() .Next(1, 10); 
+Console.WriteLine(numberB);
+int result = numberA + numberB;
+Console.WriteLine(result);
 
 
 // Возведение в степень:
