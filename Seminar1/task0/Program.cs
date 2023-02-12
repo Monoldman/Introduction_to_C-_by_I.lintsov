@@ -50,12 +50,12 @@
 // Console.WriteLine(numberA / numberB);
 
 // Использование генератора случайных чисел при сложении 
-int numberA = new Random() .Next(1, 10); //1234...9
-Console.WriteLine(numberA);
-int numberB = new Random() .Next(1, 10); 
-Console.WriteLine(numberB);
-int result = numberA + numberB;
-Console.WriteLine(result);
+// int numberA = new Random() .Next(1, 10); //1234...9
+// Console.WriteLine(numberA);
+// int numberB = new Random() .Next(1, 10); 
+// Console.WriteLine(numberB);
+// int result = numberA + numberB;
+// Console.WriteLine(result);
 
 
 // Возведение в степень:
@@ -65,7 +65,27 @@ Console.WriteLine(result);
 // Console.WriteLine(number*number);
 
 
- 
+ // Приветствие, использование конструкции ветвления.
+// Задание:
+// Начало
+// Ввести имя пользователя
+// Если имя пользователя совпадает с Маша, приветствовать по-особенному (используем команду нижнего регистра)
+// Иначе приветствовать по-обычному ("Привет ")
+// Конец 
+
+Console.WriteLine("Введите имя пользователя:   ");
+string username = Console.ReadLine();
+
+if(username.ToLower() == "маша")
+
+{
+    Console.WriteLine("Ура! Это же Маша!");
+}
+else 
+{
+Console.Write ("Привет, "); 
+Console.WriteLine(username);
+}
 
 
 
