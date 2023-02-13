@@ -87,6 +87,7 @@ Console.Write ("Привет, ");
 Console.WriteLine(username);
 }
 
+// Для решения следующей задачи создаю новую докумпент: task1
 
 
 
