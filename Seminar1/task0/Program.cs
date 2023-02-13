@@ -73,19 +73,19 @@
 // Иначе приветствовать по-обычному ("Привет ")
 // Конец 
 
-Console.WriteLine("Введите имя пользователя:   ");
-string username = Console.ReadLine();
+// Console.WriteLine("Введите имя пользователя:   ");
+// string username = Console.ReadLine();
 
-if(username.ToLower() == "маша")
+// if(username.ToLower() == "маша")
 
-{
-    Console.WriteLine("Ура! Это же Маша!");
-}
-else 
-{
-Console.Write ("Привет, "); 
-Console.WriteLine(username);
-}
+// {
+//     Console.WriteLine("Ура! Это же Маша!");
+// }
+// else 
+// {
+// Console.Write ("Привет, "); 
+// Console.WriteLine(username);
+// }
 
 // Для решения следующей задачи создаю новую докумпент: task1
 
