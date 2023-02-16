@@ -13,6 +13,11 @@
 // Console.WriteLine(); вывод и переход на новую строку
 // Console.ReadLine(); считать строку из терминала 
 
+// Команды, которые позволяют связать локальный репозиторий с удаленным:
+// git remote add origin https://github.com/Monoldman/Introduction_to_C-_by_I.lintsov.git
+// git branch -M main
+// git push -u origin main
+
 // Приветствие:
 // Console.WriteLine("Введите ваше имя");
 
