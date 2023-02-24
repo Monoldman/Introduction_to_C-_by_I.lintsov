@@ -83,19 +83,94 @@
 
 // double d = Math.Sqrt(Math.Pow (X2 - X1, 2) + Math.Pow(Y2 - Y1, 2));
 // Console.WriteLine(d);
- 
+
+
+// та же задача,           АДАПТИРОВАННЫЙ короткий ВВОД ДАННЫХ:
+
+// double ReadNumber(string messageToUser) 
+// {
+//     Console.WriteLine(messageToUser);
+//     double value = double.Parse(Console.ReadLine());
+//     return value;
+// }
+
+// double xa = ReadNumber("Введите координату точки A по X");
+// double ya = ReadNumber("Введите координату точки A по X");
+// double xb = ReadNumber("Введите координату точки B по X");
+// double yb = ReadNumber("Введите координату точки B по X");
+
+// double res = Math.Sqrt(Math.Pow(xa - xb, 2) + Math.Pow(ya - yb, 2));
+// Console.WriteLine($"{res:f2}");
+// команда выводит 2 знака после запятой, если ($"{res:f4}") будут 4 знака после запятой
+
+
+
+  
 
 
 
 // Задача №22.
+// Напишите программу, которая принимает на вход число (N) 
+// и выдаёт таблицу квадратов чисел от 1 до N.
+// 5 -> 1, 4, 9, 16, 25.
+// 2 -> 1,4
+
+//   Console.WriteLine("Введите число");
+// int N = Convert.ToInt32(Console.ReadLine());
+// int index = 1;
+
+// while (index <= N) 
+// {
+// double oneToN = Math.Pow(index, 2);
+// index++;
+// Console.WriteLine(oneToN);
+// }
+
+// Более короткий компактный синтаксис
+// который начинает работать со строки int N = ReadNumber("Введите число"); 
+
+int ReadNumber(string message) 
+{
+    Console.WriteLine(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+int N = ReadNumber("Введите число");
+for (int i = 1; i <= N; i++)
+{
+   Console.WriteLine(i * i); 
+} 
+ 
+
+
+
+
+
+
+
+// Домашнее задание
+ 
+// Задача №23.
 
 //  Напишите программу, которая принимает на вход число (N) 
 //  и выдаёт таблицу квадратов чисел от 1 до N.
 
 // 5 -> 1, 4, 9, 16, 25.
 // 2 -> 1,4
+ 
+// Console.WriteLine("Введите число");
+// int N = Convert.ToInt32(Console.ReadLine());
+// int index = 1;
 
-Console.WriteLine("Введите число");
-int userNumber = Convert.ToInt32(Console.ReadLine());
+// while (index <= N) 
+// {
+// double oneToN = Math.Pow(index, 3);
+// index++;
+// Console.WriteLine(oneToN);
+// }
 
-N = 
+// Задача №19.
+// Напишите программу, которая принимает на вход пятизначное число
+//  и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 23432 -> да
+// 12821 -> да
