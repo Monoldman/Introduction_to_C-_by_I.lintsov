@@ -62,28 +62,28 @@
 // 8 -> 36
 
 
-int ReadNumber(string message) 
-{
-    Console.WriteLine(message);
-    int value = int.Parse(Console.ReadLine());
-    return value; 
-}
+// int ReadNumber(string message) 
+// {
+//     Console.WriteLine(message);
+//     int value = int.Parse(Console.ReadLine());
+//     return value; 
+// }
 
-int numberA(int a)
-{
-    int sum = 0;
-    for (int i = 1; i <= a; i++)
-    {
-        sum = sum + i; //sum += i;  
-    }
+// int numberA(int a)
+// {
+//     int sum = 0;
+//     for (int i = 1; i <= a; i++)
+//     {
+//         sum = sum + i; //sum += i;  
+//     }
 
-    return sum;
-}
+//     return sum;
+// }
 
-int number = ReadNumber("Введите число А");
+// int number = ReadNumber("Введите число А");
 
- int result = numberA(number);
- Console.WriteLine(result);
+//  int result = numberA(number);
+//  Console.WriteLine(result);
 
   
 
@@ -104,27 +104,27 @@ int number = ReadNumber("Введите число А");
 
 // 1) принять на вход число:
 
-// int ReadNumber(string messageToUser) 
-// {
-//     Console.WriteLine(messageToUser );
-//     return Convert.ToInt32(Console.ReadLine());
-// }
+int ReadNumber(string messageToUser) 
+{
+    Console.WriteLine(messageToUser );
+    return Convert.ToInt32(Console.ReadLine());
+}
 
-// int CountOfDigits (int number)
+int CountOfDigits (int number)
 
-// {
-//     int count;                                        //int count  = 0;
-//     for (count = 0; number != 0; count++)
+{
+    int count;                                        //int count  = 0;
+    for (count = 0; number != 0; count++)
 
-//     {
-//             number /= 10;                             //number = number / 10; 
-//     }
-//     return count;
-// }
+    {
+            number /= 10;                             //number = number / 10; 
+    }
+    return count;
+}
 
-// int userNumber = ReadNumber("Введите число");
-// int result = CountOfDigits(userNumber);             //можно без этой строчики          
-// Console.WriteLine(result);
+int userNumber = ReadNumber("Введите число");
+int result = CountOfDigits(userNumber);             //можно без этой строчики          
+Console.WriteLine(result);
 
 
 
