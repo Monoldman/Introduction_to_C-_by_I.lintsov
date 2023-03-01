@@ -13,22 +13,22 @@ int ReadNumber(string message)
     return value; 
 }
 
-int numberA(int a);
-int numberB(int b)
+int numberAB(int a, int b)
 {
 int count = 1;
 
-for (int i = 1; i <= b; i++)
+for (int i = 0; i < b; i++)
     {
-        count = count * a; //sum *= i;  
+        count = count * a; //count *= a;  
     }
 return count;
 
 }
-int number = ReadNumber("Введите число А");
-int number = ReadNumber("Введите число B");    
+int a = ReadNumber("Введите число А");
+int b = ReadNumber("Введите число B");    
 
- int result = numberA(number);
+
+ int result = numberAB(a, b);
  Console.WriteLine(result);
 
 
