@@ -6,7 +6,6 @@
 
 
 
-
 int ReadNumber(string message) 
 {
     Console.WriteLine(message);
@@ -14,20 +13,22 @@ int ReadNumber(string message)
     return value; 
 }
 
-int userNumberA(int a)
-int userNumberB(int b)
-
+int numberA(int a);
+int numberB(int b)
 {
-    int count = 0;
-    for (int i = a; i <= b; i++)
+int count = 1;
+
+for (int i = 1; i <= b; i++)
     {
-        count = Math.Pow(a, b); //sum += i;  
+        count = count * a; //sum *= i;  
     }
+return count;
 
-    return count;
 }
+int number = ReadNumber("Введите число А");
+int number = ReadNumber("Введите число B");    
 
-int number = userNumberA("Введите число А");
-
- int result = count(number);
+ int result = numberA(number);
  Console.WriteLine(result);
+
+

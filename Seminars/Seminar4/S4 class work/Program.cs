@@ -62,28 +62,28 @@
 // 8 -> 36
 
 
-// int ReadNumber(string message) 
-// {
-//     Console.WriteLine(message);
-//     int value = int.Parse(Console.ReadLine());
-//     return value; 
-// }
+int ReadNumber(string message) 
+{
+    Console.WriteLine(message);
+    int value = int.Parse(Console.ReadLine());
+    return value; 
+}
 
-// int SumFromOneToA(int a)
-// {
-//     int sum = 0;
-//     for (int i = 1; i <= a; i++)
-//     {
-//         sum = sum + i; //sum += i;  
-//     }
+int numberA(int a)
+{
+    int sum = 0;
+    for (int i = 1; i <= a; i++)
+    {
+        sum = sum + i; //sum += i;  
+    }
 
-//     return sum;
-// }
+    return sum;
+}
 
-// int number = ReadNumber("Введите число А");
+int number = ReadNumber("Введите число А");
 
-//  int result = SumFromOneToA(number);
-//  Console.WriteLine(result);
+ int result = numberA(number);
+ Console.WriteLine(result);
 
   
 
@@ -138,7 +138,7 @@
 
 //  int ReadNumber(string message) 
 // {
-//      
+     
 // }
 
 // int xOfDigitsOneToA(int a)
@@ -196,18 +196,18 @@
 // решение задачи через                   VOID
 
  
-void FillRandomArray(int[] array)
-{
-for (int i = 0; i < array.Length; i++)
-{
-  array[i] = Random.Shared.Next(0,2);  
-}
-}
-int number = 8;
-int[] array = new int[number];
+// void FillRandomArray(int[] array)
+// {
+// for (int i = 0; i < array.Length; i++)
+// {
+//   array[i] = Random.Shared.Next(0,2);  
+// }
+// }
+// int number = 8;
+// int[] array = new int[number];
 
-FillRandomArray(array);
-Console.Write($"[{string.Join(", ", array)}]"); 
+// FillRandomArray(array);
+// Console.Write($"[{string.Join(", ", array)}]"); 
 
 
  
