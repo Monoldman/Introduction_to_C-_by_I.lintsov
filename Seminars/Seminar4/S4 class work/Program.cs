@@ -104,27 +104,27 @@
 
 // 1) принять на вход число:
 
-int ReadNumber(string messageToUser) 
-{
-    Console.WriteLine(messageToUser );
-    return Convert.ToInt32(Console.ReadLine());
-}
+// int ReadNumber(string messageToUser) 
+// {
+//     Console.WriteLine(messageToUser );
+//     return Convert.ToInt32(Console.ReadLine());
+// }
 
-int CountOfDigits (int number)
+// int CountOfDigits (int number)
 
-{
-    int count;                                        //int count  = 0;
-    for (count = 0; number != 0; count++)
+// {
+//     int count;                                        //int count  = 0;
+//     for (count = 0; number != 0; count++)
 
-    {
-            number /= 10;                             //number = number / 10; 
-    }
-    return count;
-}
+//     {
+//             number /= 10;                             //number = number / 10; 
+//     }
+//     return count;
+// }
 
-int userNumber = ReadNumber("Введите число");
-int result = CountOfDigits(userNumber);             //можно без этой строчики          
-Console.WriteLine(result);
+// int userNumber = ReadNumber("Введите число");
+// int result = CountOfDigits(userNumber);             //можно без этой строчики          
+// Console.WriteLine(result);
 
 
 
