@@ -147,43 +147,65 @@
 //_______________________________________________________________________________________________________________________________
 
 
-// // //______________________________________Решение задачи 32 через VOID________________________________________________________
+
+//Задача 32: Напишите программу замена элементов 
+//массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+//[-4, -8, 8, 2] -> [4, 8, -8, -2] 
+
+//РЕШЕНИЕ ЧЕРЕЗ VOID
 
 
-// int[] GetRandomArray(int length, int leftRange, int rightRange)
-// {
-
-//     int[] array = new int[length];
-
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         array[i] = Random.Shared.Next(leftRange, rightRange + 1); 
-//     }
-
-//     return array;
-// }
-
-// void InvertElements(int[] array)
-// {
-//     for(int i = 0; i < array.Length; i++)
-//     {
-//         array[i] *= -1;// array[i] = -array[i]; другой вариант решения
-//     }
-// }
 
 
-// int lengthOfArray = 12;
-// int leftBorder = -9;
-// int rightBorder = 9;
+//ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
 
-// int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);
+int[] GetRandomArray(int length, int leftRange, int rightRange)
+{
 
-// Console.WriteLine($"[{string.Join(", ", myArray)}]");
-// InvertElements(myArray);
+    int[] array = new int[length];
 
-// Console.WriteLine($"[{string.Join(", ", myArray)}]");
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange + 1);
+    }
+
+    return array;
+}
 
 
+
+// ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
+void InvertElements(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        array[i] *= -1; //каждый ЭЛЕМЕНТ, ЗНАЧЕНИЕ  массива перебирается и становится умноженными на "-1", меныя таким образом свой знак
+    }                   // array[i] = -array[i]; другой вариант решения
+}
+ 
+
+
+
+
+//ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+int length = 12;
+int leftRange = -9;
+int rightRange = 9;
+int[] myArray = GetRandomArray(length, leftRange, rightRange);
+
+
+Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМПНЕНИЙ
+
+
+
+
+InvertElements(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: void InvertElements(int[] array) 
+                             2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
+                             3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
+
+
+Console.WriteLine($"[{string.Join(", ", myArray)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
 
 
 
@@ -266,43 +288,43 @@
 
 // __________________________Решение преподавателя_____________________
 
-// int[] GetRandomArray(int length, int leftRange, int rightRange)
-// {
-//     int[] array = new int[length];
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         array[i] = Random.Shared.Next(leftRange, rightRange + 1);
-//     }
+int[] GetRandomArray(int length, int leftRange, int rightRange)
+{
+    int[] array = new int[length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange + 1);
+    }
 
-//     return array;
-// }
+    return array;
+}
 
-// //true - findNumber найден в array
-// //false - findNumber НЕ найден в array
-// bool IsElementInArray(int[] array, int findNumber)
-// {
-//     bool result = false;
-//     for(int i = 0; i < array.Length; i++)
-//     {
-//         if(array[i] == findNumber) 
-//         {
-//             result = true;
-//             break;
-//         }
-//     }
-//     return result;
-// }
+//true - findNumber найден в array
+//false - findNumber НЕ найден в array
+bool IsElementInArray(int[] array, int findNumber)
+{
+    bool result = false;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] == findNumber) 
+        {
+            result = true;
+            break;
+        }
+    }
+    return result;
+}
 
-// int lengthOfArray = 12;
-// int leftBorder = -9;
-// int rightBorder = 9;
-// int finding = 5;
+int lengthOfArray = 12;
+int leftBorder = -9;
+int rightBorder = 9;
+int finding = 5;
 
-// int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);
+int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);
 
-// Console.WriteLine($"[{string.Join(", ", myArray)}]");
-// bool res = IsElementInArray(myArray, finding);
-// Console.WriteLine(res);
+Console.WriteLine($"[{string.Join(", ", myArray)}]");
+bool res = IsElementInArray(myArray, finding);
+Console.WriteLine(res);
 
 
 
@@ -362,8 +384,7 @@ int[] MultiplyArray(int[] array)
 int[] filled_array = FillArray(5, -10, 10);
 
 Console.WriteLine($"{string.Join(',', filled_array)} -> {string.Join(',', MultiplyArray(filled_array))}");
- 
-
+ System.Console.WriteLine();
 
 
 
