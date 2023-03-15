@@ -38,24 +38,24 @@
 // //_____________________НОВЫЙ МЕТОД подготовки суммы + и - элементов____________________________________________________
 
 
-// (int, int) SumPositiveAndNegativeElements(int[] array)  // КАРТЕЖ: вернется не 1, а 2 числа, т.е.  будут введены 2 числа 
-// {
-//     int sumPositive = 0;
-//     int sumNegative = 0;
+(int, int) SumPositiveAndNegativeElements(int[] array)  // КАРТЕЖ: вернется не 1, а 2 числа, т.е.  будут введены 2 числа 
+{
+    int sumPositive = 0;
+    int sumNegative = 0;
     
-//      for (int i = 0; i < array.Length; i++)  //счетчик i виден только внутри цикла 
-// {
-//     if (array [i] > 0) 
-//     {
-//         sumPositive = sumPositive + array [i];
-//     }
-//     else if (array [i] < 0) 
-//     {
-//         sumNegative = sumNegative + array [i];
-//     }
-// }  
-// return (sumPositive, sumNegative);  //вернули картеж из двух переменных; return располагается внутри цикла и компелирует его
-// }
+     for (int i = 0; i < array.Length; i++)  //счетчик i виден только внутри цикла 
+{
+    if (array [i] > 0) 
+    {
+        sumPositive = sumPositive + array [i];
+    }
+    else if (array [i] < 0) 
+    {
+        sumNegative = sumNegative + array [i];
+    }
+}  
+return (sumPositive, sumNegative);  //вернули картеж из двух переменных; return располагается внутри цикла и компелирует его
+}
 // //------------------------------------------------------------------------------------------------------------------------
 
 // // если массив вводится пользователем: 
@@ -285,7 +285,7 @@ Console.WriteLine($"[{string.Join(", ", myArray)}]");// выводим МАСС�
 
 
 
-
+/*
 // __________________________Решение преподавателя_____________________
 
 int[] GetRandomArray(int length, int leftRange, int rightRange)
@@ -340,6 +340,8 @@ Console.WriteLine(res);
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
   
+
+ /* 
 //   __________________ ЗАДАЕМ МАССИВ ___________________________________________________________
   int[] FillArray(int length, int leftnum = int.MinValue, int rightnum = int.MaxValue)
 {
@@ -386,7 +388,7 @@ int[] filled_array = FillArray(5, -10, 10);
 Console.WriteLine($"{string.Join(',', filled_array)} -> {string.Join(',', MultiplyArray(filled_array))}");
  System.Console.WriteLine();
 
-
+*/
 
 
 

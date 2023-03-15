@@ -52,6 +52,44 @@
 
 
 
+/*  1:26 min  семинар И.Линцов
+
+//ФУНКЦИЯ базовая, 
+которая обеспечивает ввод числа:
+
+
+int ReadNumber() 
+{
+    return Convert.ToInt32(Console.ReadLine());
+}     
+ 
+
+ 
+
+ФУНКЦИЯ удобная для пользователя, 
+которая обеспечивает ввод числа:
+
+
+int ReadNumber(string messageToUser) 
+{
+    Console.WriteLine(messageToUser);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+
+ 
+ 
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 // Задача 24: 
@@ -196,7 +234,9 @@
 // решение задачи через                   VOID
 
  
-// void FillRandomArray(int[] array)
+// void FillRandomArray(int[] array) 
+/* VOID сработает только если уже есть какой-то массив (int[] array)*/
+
 // {
 // for (int i = 0; i < array.Length; i++)
 // {
