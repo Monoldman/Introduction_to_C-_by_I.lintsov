@@ -338,8 +338,8 @@ int AlloddNumbers (int[] array)
 // //ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
 
 int length = 10;
-int leftRange = 10;
-int rightRange = 10;
+int leftRange = -20;
+int rightRange = 20;
 int[] myArray = GetRandomArray(length, leftRange, rightRange);
 
 Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
@@ -351,7 +351,8 @@ AlloddNumbers(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕ
 // //                              2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
 // //                              3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
 
+int counts = AlloddNumbers(myArray);
 
-Console.WriteLine($"[{string.Join(", ", myArray)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
+Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
 
 
