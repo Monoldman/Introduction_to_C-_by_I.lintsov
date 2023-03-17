@@ -194,9 +194,105 @@
 
 
 
-//Задача 32: Напишите программу замена элементов 
-//массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
-//[-4, -8, 8, 2] -> [4, 8, -8, -2] 
+// //Задача 32: Напишите программу замена элементов 
+// //массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+// //[-4, -8, 8, 2] -> [4, 8, -8, -2] 
+
+
+
+
+
+// //ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+// int[] GetRandomArray(int length, int left, int right)
+// {
+
+//     int[] array = new int[length];
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = Random.Shared.Next(left, right + 1);
+//     }
+
+//     return array;
+// }
+
+
+
+
+
+
+// // ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
+
+// int[] MultiplyArray(int[] array)
+// {
+//     int sumP = 0;
+//     for(int i = 1; i < array.Length; i++)
+//     {
+//        sumP = sumP + array[i]; // array [i] - значение под индексом i   
+//        //array [i] += array [i]; //каждый ЭЛЕМЕНТ, ЗНАЧЕНИЕ  массива перебирается и становится умноженными на "-1", меныя таким образом свой знак
+       
+//     } 
+    
+//     return (sumP);
+// } 
+  
+ 
+
+
+// /
+// //ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+// int length = 8;
+// int left = -9;
+// int right = 9;
+// int[] myArray = GetRandomArray(length, left, right);
+
+
+// Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМПНЕНИЙ
+
+
+
+// // ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ УЖЕ МОЙ   МАССИВ:
+
+// MultiplyArray(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: void InvertElements(int[] array) 
+//                              2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
+//                              3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
+
+
+// Console.WriteLine($"[{string.Join(", ", myArray)}]");
+
+// /* выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ, 
+// string.Join - позволяет выводить массив одной строкой; Join - разбивает на элементы 
+// (", ", ...   - пказывает, как будут разделяться элементы в строке
+// ....myArray) - массив, который мы слеплеваем в строчку 
+// $"[{...}]"   - заключает результат в квадратные скобки  
+// */
+// // Console.WriteLine(myArray.Where(i => i % 2 != 0).Sum()); Метод генерации суммы нечетных элементов 
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+// Задача 36: 
+// Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+
+ // Задача 34: 
+// Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
+
 
 
 
@@ -204,72 +300,58 @@
 
 //ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
 
-int[] GetRandomArray(int length, int left, int right)
+int[] GetRandomArray(int length, int leftRange, int rightRange)
 {
-
-    int[] array = new int[length];
+    int[] array = new int [length];
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = Random.Shared.Next(left, right + 1);
+        array[i] = Random.Shared.Next(leftRange, rightRange);
+        
     }
-
+  
     return array;
 }
 
 
 
-
-
-
 // ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
 
-int[] MultiplyArray(int[] array)
+
+int AlloddNumbers (int[] array)
 {
-    int sumP = 0;
-    for(int i = 1; i < array.Length; i++)
+    int result = 0;
+
+    for (int i = 1; i < array.Length; i++)
     {
-       sumP = sumP + array[i]; // array [i] - значение под индексом i   
-       //array [i] += array [i]; //каждый ЭЛЕМЕНТ, ЗНАЧЕНИЕ  массива перебирается и становится умноженными на "-1", меныя таким образом свой знак
+        if (i % 2 != 0)
+        {
+            result += array[i];
+        }
        
-    } 
-    
-    return (sumP);
-} 
-  
+    }               
+    return result;
+}
  
 
 
+// //ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
 
-//ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+int length = 10;
+int leftRange = 10;
+int rightRange = 10;
+int[] myArray = GetRandomArray(length, leftRange, rightRange);
 
-int length = 8;
-int left = -9;
-int right = 9;
-int[] myArray = GetRandomArray(length, left, right);
-
-
-Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМПНЕНИЙ
+Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
 
 
 
-// ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ УЖЕ МОЙ   МАССИВ:
 
-MultiplyArray(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: void InvertElements(int[] array) 
-                             2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
-                             3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
-
-
-Console.WriteLine($"[{string.Join(", ", myArray)}]");
-
-/* выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ, 
-string.Join - позволяет выводить массив одной строкой; Join - разбивает на элементы 
-(", ", ...   - пказывает, как будут разделяться элементы в строке
-....myArray) - массив, который мы слеплеваем в строчку 
-$"[{...}]"   - заключает результат в квадратные скобки  
-*/
-// Console.WriteLine(myArray.Where(i => i % 2 != 0).Sum()); Метод генерации суммы нечетных элементов 
+AlloddNumbers(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: void AllpositiveNumbers (int[] array) 
+// //                              2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
+// //                              3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
 
 
- 
- 
+Console.WriteLine($"[{string.Join(", ", myArray)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
+
+

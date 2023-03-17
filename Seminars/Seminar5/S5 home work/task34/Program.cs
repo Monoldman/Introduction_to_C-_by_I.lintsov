@@ -60,8 +60,14 @@ Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИ
 AllpositiveNumbers(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: void AllpositiveNumbers (int[] array) 
 // //                              2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
 // //                              3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
+int counts = AllpositiveNumbers(myArray);
+
+Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
 
 
-Console.WriteLine($"[{string.Join(", ", myArray)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
+//  не сохранили результат работы метода AllpositiveNumbers(myArray);
+// Нужно сделать следующее
+// int counts = AllpositiveNumbers(myArray);
 
-
+// И выводить counts
+// Сам массив метод не меняет, он же считает количество четных)
