@@ -5,6 +5,86 @@
 // [-4, -6, 89, 6] -> 0
 
 
+//ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+int[] GetRandomArray(int length, int leftRange, int rightRange)
+{
+    int[] array = new int [length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange);
+        
+    }
+  
+    return array;
+}
+
+
+
+// ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
+
+
+int AlloddNumbers (int[] array)
+{
+    int result = 0;
+
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (i % 2 != 0)
+        {
+            result += array[i];
+        }
+       
+    }               
+    return result;
+}
+ 
+
+
+// //ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+int length = 10;
+int leftRange = -20;
+int rightRange = 20;
+int[] myArray = GetRandomArray(length, leftRange, rightRange);
+
+Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
+
+
+
+
+AlloddNumbers(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: int AlloddNumbers (int[] array)
+// //                              2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
+// //                              3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)int AlloddNumbers + 2)myArray   =   int AlloddNumbers (int[] array);   */  
+
+int counts = AlloddNumbers(myArray); //ДОПОЛНИТЕЛЬНАЯ ПЕРЕМЕННАЯ, которая запускает программу
+
+Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Задача 36: 
+// Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+
 // // Найдите сумму отрицательных и положительных элементов массива. Например, 
 // // в массиве в 
 
@@ -273,86 +353,3 @@
 
  
  
-
-
-
-
-
-
-
-
-// Задача 36: 
-// Задайте одномерный массив, заполненный случайными числами. 
-// Найдите сумму элементов, стоящих на нечётных позициях.
-// [3, 7, 23, 12] -> 19
-// [-4, -6, 89, 6] -> 0
-
-
- // Задача 34: 
-// Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
-
-
-
-
-
-
-//ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
-
-int[] GetRandomArray(int length, int leftRange, int rightRange)
-{
-    int[] array = new int [length];
-
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = Random.Shared.Next(leftRange, rightRange);
-        
-    }
-  
-    return array;
-}
-
-
-
-// ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
-
-
-int AlloddNumbers (int[] array)
-{
-    int result = 0;
-
-    for (int i = 1; i < array.Length; i++)
-    {
-        if (i % 2 != 0)
-        {
-            result += array[i];
-        }
-       
-    }               
-    return result;
-}
- 
-
-
-// //ВЫЗЫВАЮЩИЙ Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
-
-int length = 10;
-int leftRange = -20;
-int rightRange = 20;
-int[] myArray = GetRandomArray(length, leftRange, rightRange);
-
-Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
-
-
-
-
-AlloddNumbers(myArray);  /* 1) Берется ПРОГРАММА ПО КОНВЕРТАЦИИ (преобразованию) МАССИВА: void AllpositiveNumbers (int[] array) 
-// //                              2) В нее ПОДСТАВЛЯЕТСЯ СГЕНЕРИРОВАННЫЙ МАССИВ: int[] myArray = GetRandomArray(lengthOfArray, leftBorder, rightBorder);     
-// //                              3) МАССИВ ПРОГРАММА []<-- СГЕНЕРИРОВАННЫЙ МАССИВ =  1)InvertElements + 2)myArray   =   InvertElements(myArray);   */  
-
-int counts = AlloddNumbers(myArray);
-
-Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
-
-
