@@ -50,3 +50,73 @@ double [] doubles = new double[] {2.33539583, 1.293535, 45.32253253};
 Console.WriteLine($"{string.Join (", ", doubles.Select(x => Math.Round(x, 2)))}" );
 */
 
+
+// Задача 38: 
+// Задайте массив вещественных чисел. 
+// Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+//ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+int[] GetRandomArray(int length, int leftRange, int rightRange)
+{
+    int[] array = new int [length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange);
+        
+    }
+  
+    return array;
+}
+
+
+
+// ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
+
+
+(int, int) MaxMin (int[] array)
+{
+    int resultMax = 0;
+    int resultMin = 0;
+
+
+    for (int i = 0; i < array.Length; i++)
+    
+    {
+        if (array[i] > resultMax)
+        {
+            resultMax = array[i];
+        }
+        else if (array[i] < resultMin)
+        {
+        resultMin = array[i];
+        }
+
+    }   
+           
+    return (resultMax, resultMin);
+
+}
+ 
+
+int length = 10;
+int leftRange = -20;
+int rightRange = 20;
+int[] myArray = GetRandomArray(length, leftRange, rightRange);
+
+
+Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
+
+
+
+(int max, int min) counts = MaxMin(myArray); //ДОПОЛНИТЕЛЬНАЯ ПЕРЕМЕННАЯ, которая запускает программу
+
+
+Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим МАССИВ ПОСЛЕ ИЗМЕНЕНИЙ
+
+
+
+
+

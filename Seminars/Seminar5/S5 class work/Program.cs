@@ -68,14 +68,14 @@ return (sumPositive, sumNegative);  //вернули картеж из двух 
 
 // // //____________________________ВЫЗЫВАЮЩИЙ КОД:______________________________________________________________________________
 
-// // int[] myArray = GetRandomArray(); //если нужны разные массивы, здесь можно задавать параметры: int[] myArray = GetRandomArray(12);
+int[] myArray = GetRandomArray(); //если нужны разные массивы, здесь можно задавать параметры: int[] myArray = GetRandomArray(12);
 // // //создаем массив, пока не указываем опциональных параметрв и ставим пустые скобки
 // // // тк наш массив в скобках будет гинерироваться тотже: одинаковые: int Length = 12; int LeftRange = -9; int RightRange = 9;
 // // //нужен вызов еще одного метода:  для работы с картежем:  так как возвращаются 2 целых числ а, мы должны подготовить 2 пременные,
 // // //в которые мы эти 2 целых числ положим.
 // // //моежно подключать несколько массивов: 
-// // // int[] myArray = GetRandomArray(12, -9, 9); Но, лучше добалять дополнительыне int, чтобы значения были названы 
-// // // int[] myArray = GetRandomArray(7, 0, 5);
+int[] myArray = GetRandomArray(12, -9, 9); //Но, лучше добалять дополнительыне int, чтобы значения были названы 
+int[] myArray = GetRandomArray(7, 0, 5);
 
 // // Console.WriteLine($"[{string.Join(", ", myArray)}]"); //делает из строки массив  
 // // (int sumP, int sumN) = SumPositiveAndNegativeElements(myArray); //(int sumP, _) выведет значение только первой переменной
@@ -394,5 +394,67 @@ Console.WriteLine($"{string.Join(',', filled_array)} -> {string.Join(',', Multip
 
 
 
+// Задача 38: 
+// Задайте массив вещественных чисел. 
+// Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+//ВЫЗЫВАЕМЫЙ  Метод генерации случайного массива с вводдом чисел ВЫЗЫВАЕТСЯ ЧЕРЕЗ:  GetRandomArray
+
+int[] GetRandomArray(int length, int leftRange, int rightRange)
+{
+    int[] array = new int [length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange);
+        
+    }
+  
+    return array;
+}
+
+
+
+// ПРОГРАММА/ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ:
+
+
+int Max (int[] array)
+{
+    int resultMax = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    
+    {
+        if (array[i] > resultMax)
+        {
+            resultMax = array[i];
+        }
+    }   
+           
+    return (resultMax);
+
+}
+ 
+
+int Min (int[] array)
+{
+    int resultMin = 0;
+
+
+    for (int i = 0; i < array.Length; i++)
+    
+    {
+    
+        if (array[i] < resultMin)
+        {
+        resultMin = array[i];
+        }
+
+    }   
+           
+    return (resultMin);
+
+}
 
 
